@@ -66,20 +66,20 @@ jobs:
         reading:
           mode: "${{ github.event.inputs.reading_mode || 'smart_random' }}"
           # 目标阅读时长（分钟），支持区间随机，格式如："1" 或 "1-2"，当前为：1分钟
-          target_duration: "${{ github.event.inputs.target_duration || '120-150' }}"
-          reading_interval: "30-48"
+          target_duration: "${{ github.event.inputs.target_duration || '60-90' }}"
+          reading_interval: "30-45"
           use_curl_data_first: true
           fallback_to_config: true
           smart_random:
-            book_continuity: 0.8
-            chapter_continuity: 0.7
+            book_continuity: 0.9
+            chapter_continuity: 0.8
             book_switch_cooldown: 3600
 
         human_simulation:
-          enabled: false
+          enabled: true
           reading_speed_variation: true
-          break_probability: 0.15
-          break_duration: "10-20"
+          break_probability: 0.2
+          break_duration: "60-180"
           rotate_user_agent: false
 
         network:
